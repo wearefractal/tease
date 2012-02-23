@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Test</title>
+<script src="tease.js"></script>
+</head>
+<body>
+<p>Test page</p>
+</body>
+<script>
+define('barfoo', ['foo'], function (foo) {
+  return 'bar' + foo;
+});
+
+define('test', ['barfoo'], function (barfoo) {
+  return 'this is a test';
+});
+define('printtest', ['test'], function (teststr) {
+  return function (fizz) {
+    console.log(teststr);
+  };
+});
+</script>
+</html>

@@ -1,0 +1,4 @@
+coffee -b -j ./tease.js -c src/tease.coffee
+uglifyjs -nc --unsafe -mt -o tease.min.js tease.js
+echo "File size (minified): " && cat tease.min.js | wc -c
+echo "File size (gzipped): " && cat tease.min.js | gzip -9f  | wc -c
